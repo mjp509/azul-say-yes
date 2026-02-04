@@ -98,12 +98,12 @@
     }
 
     .buttons {
-      position: relative;
-      height: 78px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
     }
 
     button {
-      position: absolute;
       padding: 14px 36px;
       border-radius: 40px;
       border: none;
@@ -119,7 +119,6 @@
     }
 
     #yes {
-      left: 12%;
       background: linear-gradient(135deg, #ff4d6d, #ff758f);
       color: #fff;
       box-shadow: 0 15px 35px rgba(255,77,109,0.55);
@@ -131,9 +130,12 @@
     }
 
     #no {
-      left: 55%;
       background: rgba(255,255,255,0.9);
       color: #777;
+    }
+
+    #no.evading {
+      position: absolute;
     }
 
     .hint {
@@ -168,8 +170,6 @@
       h2 { font-size: 23px; }
       .card-img { width: 140px; }
       button { padding: 12px 28px; font-size: 15px; }
-      #yes { left: 8%; }
-      #no { left: 55%; }
       .tqm { font-size: 48px; }
     }
   </style>
@@ -184,8 +184,8 @@
 
     <div class="buttons" id="buttons-wrap">
       <button id="yes">Yes 💖</button>
+      <button id="no">No 🙈</button>
     </div>
-    <button id="no">No 🙈</button>
 
     <div id="tqm" class="tqm" style="display: none;">TQM 💘</div>
   </div>
@@ -202,6 +202,12 @@
     const yesSound = document.getElementById("yesSound");
 
     function moveNoBtn() {
+      // On first evasion, reparent to card so it can roam the whole card
+      if (!noBtn.classList.contains("evading")) {
+        noBtn.classList.add("evading");
+        card.appendChild(noBtn);
+      }
+
       const cardRect = card.getBoundingClientRect();
       const btnRect = noBtn.getBoundingClientRect();
 
