@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Be My Valentine 💘</title>
+  <title>Be My Valentine? </title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@
   <div class="card">
     <h2 id="words">Azul</h2>
     <img id="minion-img" class="card-img" src="minion.jpg" alt="Minion Valentine">
-    <h2 id="words">Will you be my Valentine?</h2>
+    <h2 id="words-lower">Will you be my Valentine?</h2>
 
     <div class="buttons" id="buttons-wrap">
       <button id="yes">Yes 💖</button>
@@ -258,6 +258,7 @@
       document.getElementById("minion-img").remove();
       document.getElementById("buttons-wrap").remove();
       document.getElementById("words").remove();
+      document.getElementById("words-lower").remove();
       noBtn.remove();
       document.getElementById("tqm").style.display = "block";
     });
