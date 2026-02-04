@@ -195,16 +195,10 @@
     <div id="tqm" class="tqm" style="display: none;">💘 TQM 💘</div>
   </div>
 
-  <!-- Sounds -->
-  <audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-cartoon-voice-laugh-343.mp3"></audio>
-  <audio id="yesSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"></audio>
-
   <script>
     const noBtn = document.getElementById("no");
     const yesBtn = document.getElementById("yes");
     const card = document.querySelector(".card");
-    const hoverSound = document.getElementById("hoverSound");
-    const yesSound = document.getElementById("yesSound");
 
     const buttonsWrap = document.getElementById("buttons-wrap");
 
@@ -227,8 +221,6 @@
       noBtn.style.left = (Math.random() * (maxX - pad) + pad) + "px";
       noBtn.style.top = (Math.random() * (maxY - pad) + pad) + "px";
 
-      hoverSound.currentTime = 0;
-      hoverSound.play();
     }
 
     // Desktop: move when mouse gets close (proximity detection)
@@ -255,7 +247,6 @@
     }, { passive: false });
 
     yesBtn.addEventListener("click", () => {
-      yesSound.play();
 
       confetti({
         particleCount: 260,
