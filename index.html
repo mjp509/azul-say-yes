@@ -178,8 +178,9 @@
 <body>
 
   <div class="card">
+    <h2 id="words">Azul</h2>
     <img id="minion-img" class="card-img" src="minion.jpg" alt="Minion Valentine">
-    <h2>Azul,<br>will you be my Valentine?</h2>
+    <h2 id="words">Will you be my Valentine?</h2>
 
     <div class="buttons" id="buttons-wrap">
       <button id="yes">Yes 💖</button>
@@ -250,6 +251,7 @@
       // Remove image, buttons, and show TQM
       document.getElementById("minion-img").remove();
       document.getElementById("buttons-wrap").remove();
+      document.getElementById("words").remove();
       noBtn.remove();
       document.getElementById("tqm").style.display = "block";
     });
